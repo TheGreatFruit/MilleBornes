@@ -2,7 +2,7 @@ package cartes;
 
 public enum Type {
 	FEU ("Feu Rouge", "Feu Vert", "Véhicule Prioritaire"),
-	ESSENCE ("Panne d'essence", "Essence", "Citerne"),
+	ESSENCE ("Panne d'essence", "Bidon d'essence", "Citerne"),
 	CREVAISON ("Crevaison", "Roue de secours", "Increvable"),
 	ACCIDENT ("Accident", "Réparations", "As du volant");
 	
