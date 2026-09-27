@@ -7,7 +7,7 @@ public class Attaque extends Bataille {
 
 	@Override
 	public String toString() {
-		return getType().toString();
+		return getType().getAttaque();
 	}
 
 

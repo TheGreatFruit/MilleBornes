@@ -16,6 +16,4 @@ public class Borne extends Carte {
 	public int getKm() {
 		return km;
 	}
-	
-	
 }

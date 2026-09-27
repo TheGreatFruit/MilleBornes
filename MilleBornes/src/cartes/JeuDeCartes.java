@@ -13,7 +13,7 @@ public class JeuDeCartes {
 			new Configuration(new Parade(Type.CREVAISON), 6),
 			new Configuration(new Parade(Type.ACCIDENT), 6),
 			new Configuration(new Attaque(Type.FEU), 5),
-			new Configuration(new DebutLimite(), 5),
+			new Configuration(new DebutLimite(), 4),
 			new Configuration(new Attaque(Type.ESSENCE), 3),
 			new Configuration(new Attaque(Type.CREVAISON), 3),
 			new Configuration(new Attaque(Type.ACCIDENT), 3),
@@ -25,9 +25,10 @@ public class JeuDeCartes {
 	
 	public String affichageJeuDeCartes() {
 		StringBuilder affichage = new StringBuilder();
-		affichage.append("JEU :\n\n");
+		/*Carte[] jeu = donnerCartes();*/
 		for(int i=0; i<typesDeCartes.length; i++) {
 			affichage.append(typesDeCartes[i].getNbExemplaires());
+			affichage.append(" ");
 			affichage.append(typesDeCartes[i].getCarte());
 			affichage.append("\n");
 		}
@@ -35,11 +36,33 @@ public class JeuDeCartes {
 	}
 	
 	public Carte[] donnerCartes() {
-		return null;
-		// TODO
+		int taille = 0;
+		int idx = 0;
+		
+		for(int i=0;i<typesDeCartes.length; i++) {
+			taille += typesDeCartes[i].nbExemplaires;
+		}
+		Carte[] jeu = new Carte[taille];
+		for(int i=0; i < typesDeCartes.length; i++) {
+			for(int j = 0; j < typesDeCartes[i].getNbExemplaires(); j++) {
+				jeu[idx] = typesDeCartes[i].getCarte();
+				idx++;
+			}
+		}
+		return jeu;
 	}
 	
-	
+	public boolean checkCount() {
+	    Carte[] jeu = donnerCartes();
+
+	    int nombreAttendu = 0;
+
+	    for (Configuration configuration : typesDeCartes) {
+	        nombreAttendu += configuration.getNbExemplaires();
+	    }
+
+	    return jeu.length == nombreAttendu;
+	}
 	
 	private static class Configuration {
 		Carte carte;
@@ -58,12 +81,6 @@ public class JeuDeCartes {
 		public Carte getCarte() {
 			return carte;
 		}
-		
-		
-		
-		
-		
-		
 	}
 	
 }
