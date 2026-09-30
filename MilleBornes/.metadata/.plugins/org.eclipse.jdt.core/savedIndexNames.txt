@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+\\fsi-home-win\HOME-ETUD\gtp5271a\ILU3\POO\MilleBornes\MilleBornes\.metadata\.plugins\org.eclipse.jdt.core
+2494864949.index
+1865797976.index
+2635887636.index
