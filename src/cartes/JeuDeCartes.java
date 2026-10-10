@@ -42,15 +42,19 @@ public class JeuDeCartes {
 	}
 
 	public boolean checkCount() {
-		Carte[] jeu = donnerCartes();
-
-		int nombreAttendu = 0;
-
-		for (Configuration configuration : typesDeCartes) {
-			nombreAttendu += configuration.getNbExemplaires();
-		}
-
-		return jeu.length == nombreAttendu;
+	    Carte[] jeu = donnerCartes();
+	    for (Configuration configuration : typesDeCartes) {
+	        int compteur = 0;
+	        for (Carte carte : jeu) {
+	            if (carte.equals(configuration.getCarte())) {
+	                compteur++;
+	            }
+	        }
+	        if (compteur != configuration.getNbExemplaires()) {
+	            return false;
+	        }
+	    }
+	    return true;
 	}
 
 	private static class Configuration {
