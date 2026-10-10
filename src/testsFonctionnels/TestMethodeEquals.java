@@ -12,7 +12,7 @@ public class TestMethodeEquals {
 	public static void main(String[] args) {
 		Carte carte25Bornes1 = new Borne(25);
 		Carte carte25Bornes2 = new Borne(25);
-		Carte carte50Bornes = new Borne(25);
+		Carte carte50Bornes = new Borne(50);
 		System.out.println("Deux cartes de 25km sont identiques ? " + carte25Bornes1.equals(carte25Bornes2));
 		System.out.println("La carte 25km et 50km sont identiques ? " + carte25Bornes1.equals(carte50Bornes));
 
