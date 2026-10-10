@@ -1,0 +1,11 @@
+# Fichiers compilés Java
+/bin/
+/**/bin/
+*.class
+
+# Espaces de travail et métadonnées Eclipse
+.metadata/
+/**/.metadata/
+
+# Fichiers temporaires
+*.log
