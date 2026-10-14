@@ -40,7 +40,7 @@ public class GestionCartes {
 		return pioche;
 	}
 
-	public static <T> Boolean verifierMelange(List<T> listeAvant, List<T> listeMelangee) {
+	public static <T> boolean verifierMelange(List<T> listeAvant, List<T> listeMelangee) {
 		if (listeAvant.size() != listeMelangee.size()) {
 			return false;
 		}

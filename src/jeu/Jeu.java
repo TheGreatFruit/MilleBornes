@@ -15,7 +15,7 @@ public class Jeu {
 		JeuDeCartes jeuDeCartes = new JeuDeCartes();
 		Carte[] cartes = jeuDeCartes.donnerCartes();
 
-		List<Carte> listeCartes = new ArrayList<>();
+		List<Carte> listeCartes = new ArrayList<>();		// Creation d'un ArrayList pour pouvoir utiliser les methodes defninies
 		Collections.addAll(listeCartes, cartes);
 
 		listeCartes = GestionCartes.melanger(listeCartes);
