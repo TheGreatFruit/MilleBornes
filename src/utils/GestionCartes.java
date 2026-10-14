@@ -44,8 +44,7 @@ public class GestionCartes {
 		if (listeAvant.size() != listeMelangee.size()) {
 			return false;
 		}
-		
-		int nbAv, nbAp;
+
 		for(T element : listeAvant) {
 			if(Collections.frequency(listeAvant, element) != Collections.frequency(listeMelangee, element)) {
 				return false;
@@ -68,26 +67,13 @@ public class GestionCartes {
 	}
 	
 	
-	public static <T> List<T> rassemblerV2(List<T> liste) {
-	    List<T> source = new ArrayList<>(liste);   // copie pour ne pas détruire l'argument
-	    List<T> resultat = new ArrayList<>();
-	    while (!source.isEmpty()) {
-	        T courant = source.get(0);
-	        Iterator<T> it = source.iterator();
-	        while (it.hasNext()) {
-	            T element = it.next();
-	            if (element.equals(courant)) {
-	                resultat.add(element);
-	                it.remove();
-	            }
-	        }
-	    }
-	    return resultat;
-	}
-	
-	
 	public static <T> boolean verifierRassemblement(List<T> liste) {
-	    ListIterator<T> it1 = liste.listIterator();
+	    
+		// Creer 2 methodes. 1 qui parcourt les listes jusqu'a trouver une carte differente.
+		// La 2nde methode qui parcourt l'autre liste en prenant en argument l'indice d'une carte differente.
+		// Elle parcourt alors la liste jusqu'a l'indice pour verifier que ce troncon ne possede pas de carte
+		// differente.
+		ListIterator<T> it1 = liste.listIterator();
 	    if (!it1.hasNext()) {
 	        return true;
 	    }
